@@ -187,12 +187,43 @@ img {
     transform: scale(1.05);
 }
 
+/* Table wrapper za horizontalno skrolovanje */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: visible;
+    margin: 2rem 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #8b7055 #f5e6d3;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 12px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f5e6d3;
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #8b7055;
+    border-radius: 10px;
+    border: 2px solid #f5e6d3;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #6d563f;
+}
+
 /* Tabele */
 table {
     width: 100%;
+    min-width: 600px;
     border-collapse: separate;
     border-spacing: 0;
-    margin: 2rem 0;
+    margin: 0;
     background-color: #ffffff;
     border-radius: 12px;
     overflow: hidden;
@@ -357,31 +388,53 @@ footer {
     }
     
     /* Responsive tabele */
+    .table-wrapper {
+        margin: 1.5rem -1rem;
+        padding: 0 1rem;
+    }
+    
     table {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         border: 2px solid #5a4632;
+        min-width: 700px;
     }
     
     th, td {
-        padding: 0.7rem 0.5rem;
+        padding: 0.6rem 0.5rem;
+        white-space: nowrap;
     }
     
     th {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    td strong {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .table-wrapper {
+        margin: 1rem -0.5rem;
+        padding: 0 0.5rem;
+    }
+    
     table {
-        font-size: 0.8rem;
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        font-size: 0.75rem;
+        min-width: 650px;
     }
     
     th, td {
         padding: 0.5rem 0.4rem;
-        min-width: 80px;
+        min-width: 70px;
+    }
+    
+    th {
+        font-size: 0.85rem;
+    }
+    
+    td strong {
+        font-size: 0.8rem;
     }
 }
 
