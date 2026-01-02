@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #0a0e27;
-    color: #e0e0e0;
+    background-color: #f5f5f5;
+    color: #333333;
     line-height: 1.6;
     padding: 0;
     margin: 0;
@@ -23,12 +23,13 @@ body {
 
 /* Navigacija */
 nav {
-    background-color: #1a1f3a;
+    background-color: #ffffff;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #e0e0e0;
 }
 
 nav ul {
@@ -40,7 +41,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #e0e0e0;
+    color: #333333;
     text-decoration: none;
     font-weight: 600;
     padding: 0.5rem 1rem;
@@ -50,7 +51,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #2a3f5f;
+    background-color: #0066cc;
     color: #ffffff;
 }
 
@@ -85,7 +86,7 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 14, 39, 0.7);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -104,53 +105,54 @@ nav ul li a:hover {
 
 /* Naslovi */
 h1 {
-    color: #4a9eff;
+    color: #0066cc;
     margin: 2rem 0 1rem 0;
     font-size: 2.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #4a9eff;
+    border-bottom: 3px solid #0066cc;
 }
 
 h2 {
-    color: #6bb3ff;
+    color: #0088dd;
     margin: 1.5rem 0 1rem 0;
     font-size: 1.8rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #6bb3ff;
+    border-bottom: 2px solid #0088dd;
 }
 
 /* Pasusi */
 p {
     margin: 1.5rem 0;
     padding: 1rem;
-    background-color: rgba(26, 31, 58, 0.5);
-    border-left: 4px solid #4a9eff;
+    background-color: #ffffff;
+    border-left: 4px solid #0066cc;
     border-radius: 5px;
+    color: #333333;
 }
 
 /* Horizontalne linije */
 hr {
     border: none;
-    border-top: 2px solid #2a3f5f;
+    border-top: 2px solid #e0e0e0;
     margin: 2rem 0;
 }
 
 /* Klasa .istaknuto */
 .istaknuto {
-    color: #ffd700;
+    color: #0066cc;
     font-weight: 700;
     text-decoration: underline;
 }
 
 /* Linkovi */
 a {
-    color: #6bb3ff;
+    color: #0066cc;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #ffd700;
+    color: #0088dd;
     text-decoration: underline;
 }
 
@@ -180,18 +182,19 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
-    background-color: rgba(26, 31, 58, 0.5);
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
-    border: 2px solid #2a3f5f;
+    border: 1px solid #e0e0e0;
 }
 
 th {
-    background-color: #1a1f3a;
-    color: #ffd700;
+    background-color: #0066cc;
+    color: #ffffff;
     padding: 1rem;
     text-align: left;
     font-weight: 700;
@@ -199,15 +202,15 @@ th {
 
 td {
     padding: 0.8rem 1rem;
-    color: #e0e0e0;
+    color: #333333;
 }
 
 tr:nth-child(even) {
-    background-color: rgba(42, 63, 95, 0.3);
+    background-color: #f9f9f9;
 }
 
 tr:hover {
-    background-color: rgba(74, 158, 255, 0.2);
+    background-color: #e8f4f8;
 }
 
 /* Liste */
@@ -218,15 +221,15 @@ ul, ol {
 
 ul li, ol li {
     margin: 0.5rem 0;
-    color: #e0e0e0;
+    color: #333333;
 }
 
 ul li::marker {
-    color: #4a9eff;
+    color: #0066cc;
 }
 
 ol li::marker {
-    color: #ffd700;
+    color: #0066cc;
     font-weight: 700;
 }
 
@@ -255,19 +258,21 @@ ol li::marker {
 section {
     margin: 3rem 0;
     padding: 2rem;
-    background-color: rgba(26, 31, 58, 0.3);
+    background-color: #ffffff;
     border-radius: 10px;
     content-visibility: auto;
     contain-intrinsic-size: auto 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 footer {
-    background-color: #1a1f3a;
+    background-color: #333333;
     padding: 2rem;
     text-align: center;
     margin-top: 3rem;
-    border-top: 2px solid #2a3f5f;
+    border-top: 2px solid #0066cc;
+    color: #ffffff;
 }
 
 /* Responsive */
