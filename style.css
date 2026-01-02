@@ -187,8 +187,8 @@ img {
     transform: scale(1.05);
 }
 
-/* Table wrapper za horizontalno skrolovanje */
-.table-wrapper {
+/* Table container za horizontalno skrolovanje */
+.table-container {
     width: 100%;
     overflow-x: auto;
     overflow-y: visible;
@@ -198,22 +198,22 @@ img {
     scrollbar-color: #8b7055 #f5e6d3;
 }
 
-.table-wrapper::-webkit-scrollbar {
+.table-container::-webkit-scrollbar {
     height: 12px;
 }
 
-.table-wrapper::-webkit-scrollbar-track {
+.table-container::-webkit-scrollbar-track {
     background: #f5e6d3;
     border-radius: 10px;
 }
 
-.table-wrapper::-webkit-scrollbar-thumb {
+.table-container::-webkit-scrollbar-thumb {
     background: #8b7055;
     border-radius: 10px;
     border: 2px solid #f5e6d3;
 }
 
-.table-wrapper::-webkit-scrollbar-thumb:hover {
+.table-container::-webkit-scrollbar-thumb:hover {
     background: #6d563f;
 }
 
@@ -388,7 +388,7 @@ footer {
     }
     
     /* Responsive tabele */
-    .table-wrapper {
+    .table-container {
         margin: 1.5rem -1rem;
         padding: 0 1rem;
     }
@@ -413,28 +413,79 @@ footer {
     }
 }
 
+/* Media query za mobilne uređaje */
+@media (max-width: 600px) {
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        margin: 1rem 0;
+        padding: 0;
+    }
+    
+    table {
+        font-size: 0.7rem;
+        min-width: 600px;
+        border: 2px solid #5a4632;
+    }
+    
+    th, td {
+        padding: 0.4rem 0.3rem;
+        white-space: nowrap;
+        border: 1px solid #6d563f;
+    }
+    
+    th {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.4rem;
+    }
+    
+    td {
+        font-size: 0.65rem;
+    }
+    
+    td strong {
+        font-size: 0.7rem;
+    }
+    
+    /* Osiguravamo da colspan i rowspan i dalje rade */
+    td[rowspan],
+    th[rowspan] {
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    th[colspan],
+    td[colspan] {
+        text-align: center;
+    }
+}
+
 @media (max-width: 480px) {
-    .table-wrapper {
+    .table-container {
         margin: 1rem -0.5rem;
         padding: 0 0.5rem;
     }
     
     table {
-        font-size: 0.75rem;
-        min-width: 650px;
+        font-size: 0.65rem;
+        min-width: 550px;
     }
     
     th, td {
-        padding: 0.5rem 0.4rem;
-        min-width: 70px;
+        padding: 0.35rem 0.25rem;
+        min-width: 60px;
     }
     
     th {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
+    }
+    
+    td {
+        font-size: 0.6rem;
     }
     
     td strong {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
     }
 }
 
