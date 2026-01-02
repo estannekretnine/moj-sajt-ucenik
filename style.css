@@ -190,38 +190,84 @@ img {
 /* Tabele */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 2rem 0;
-    background-color: rgba(212, 185, 154, 0.2);
-    border-radius: 8px;
+    background-color: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border: 3px solid #5a4632;
 }
 
 table, th, td {
-    border: 1px solid #a68b6f;
+    border: 2px solid #6d563f;
 }
 
 th {
-    background-color: #6d563f;
-    color: #f5e6d3;
-    padding: 1rem;
+    background: linear-gradient(135deg, #6d563f 0%, #8b7055 100%);
+    color: #ffffff;
+    padding: 1.2rem 1rem;
     text-align: left;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #5a4632;
+    letter-spacing: 0.5px;
+}
+
+th:first-child {
+    border-left: none;
+}
+
+th:last-child {
+    border-right: none;
 }
 
 td {
-    padding: 0.8rem 1rem;
-    color: #f5f5f5;
+    padding: 1rem;
+    color: #333333;
+    background-color: #ffffff;
+    font-size: 1rem;
+    border-bottom: 1px solid #d4b99a;
 }
 
-tr:nth-child(even) {
-    background-color: rgba(196, 166, 137, 0.15);
+td strong {
+    color: #6d563f;
+    font-weight: 700;
 }
 
-tr:hover {
-    background-color: rgba(212, 185, 154, 0.3);
+tr:nth-child(even) td {
+    background-color: #f9f7f4;
+}
+
+tr:nth-child(odd) td {
+    background-color: #ffffff;
+}
+
+tr:hover td {
+    background-color: #f5e6d3 !important;
+    transition: background-color 0.2s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Poboljšanje za colspan i rowspan ćelije */
+td[rowspan],
+th[rowspan] {
+    background-color: #f5e6d3;
+    font-weight: 600;
+    vertical-align: middle;
+    text-align: center;
+}
+
+th[colspan],
+td[colspan] {
+    text-align: center;
+    font-weight: 700;
 }
 
 /* Liste */
@@ -308,6 +354,34 @@ footer {
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
+    }
+    
+    /* Responsive tabele */
+    table {
+        font-size: 0.9rem;
+        border: 2px solid #5a4632;
+    }
+    
+    th, td {
+        padding: 0.7rem 0.5rem;
+    }
+    
+    th {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 0.8rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        padding: 0.5rem 0.4rem;
+        min-width: 80px;
     }
 }
 
