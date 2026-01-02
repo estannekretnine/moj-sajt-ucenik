@@ -220,7 +220,6 @@ img {
 /* Tabele */
 table {
     width: 100%;
-    min-width: 600px;
     border-collapse: separate;
     border-spacing: 0;
     margin: 0;
@@ -229,6 +228,13 @@ table {
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     border: 3px solid #5a4632;
+}
+
+/* Za veće ekrane, osiguravamo minimalnu širinu */
+@media (min-width: 601px) {
+    table {
+        min-width: 600px;
+    }
 }
 
 table, th, td {
@@ -246,6 +252,7 @@ th {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     border-bottom: 3px solid #5a4632;
     letter-spacing: 0.5px;
+    word-wrap: break-word;
 }
 
 th:first-child {
@@ -262,6 +269,8 @@ td {
     background-color: #ffffff;
     font-size: 1rem;
     border-bottom: 1px solid #d4b99a;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 td strong {
@@ -413,38 +422,46 @@ footer {
     }
 }
 
-/* Media query za mobilne uređaje */
+/* Media query za mobilne uređaje - responsive tabele */
 @media (max-width: 600px) {
     .table-container {
         width: 100%;
-        overflow-x: auto;
+        overflow-x: visible;
         margin: 1rem 0;
         padding: 0;
     }
     
     table {
-        font-size: 0.7rem;
-        min-width: 600px;
+        width: 100%;
+        font-size: 0.65rem;
+        min-width: auto;
         border: 2px solid #5a4632;
+        display: table;
     }
     
     th, td {
-        padding: 0.4rem 0.3rem;
-        white-space: nowrap;
+        padding: 0.5rem 0.3rem;
+        white-space: normal;
+        word-wrap: break-word;
         border: 1px solid #6d563f;
+        font-size: 0.7rem;
     }
     
     th {
         font-size: 0.75rem;
-        padding: 0.5rem 0.4rem;
+        padding: 0.6rem 0.4rem;
+        line-height: 1.3;
     }
     
     td {
         font-size: 0.65rem;
+        line-height: 1.4;
     }
     
     td strong {
         font-size: 0.7rem;
+        display: block;
+        margin-bottom: 0.2rem;
     }
     
     /* Osiguravamo da colspan i rowspan i dalje rade */
@@ -458,26 +475,32 @@ footer {
     td[colspan] {
         text-align: center;
     }
+    
+    /* Smanjujemo font za dugi tekst */
+    td:not([rowspan]):not([colspan]) {
+        max-width: 120px;
+    }
 }
 
 @media (max-width: 480px) {
     .table-container {
-        margin: 1rem -0.5rem;
-        padding: 0 0.5rem;
+        margin: 1rem 0;
+        padding: 0;
     }
     
     table {
-        font-size: 0.65rem;
-        min-width: 550px;
+        font-size: 0.6rem;
+        border: 2px solid #5a4632;
     }
     
     th, td {
-        padding: 0.35rem 0.25rem;
-        min-width: 60px;
+        padding: 0.4rem 0.25rem;
+        font-size: 0.65rem;
     }
     
     th {
         font-size: 0.7rem;
+        padding: 0.5rem 0.3rem;
     }
     
     td {
@@ -486,6 +509,31 @@ footer {
     
     td strong {
         font-size: 0.65rem;
+    }
+    
+    /* Još manje mesta za ćelije na vrlo malim ekranima */
+    td:not([rowspan]):not([colspan]) {
+        max-width: 100px;
+    }
+}
+
+/* Za ekstra male ekrane - stack layout */
+@media (max-width: 360px) {
+    table {
+        font-size: 0.55rem;
+    }
+    
+    th, td {
+        padding: 0.35rem 0.2rem;
+        font-size: 0.6rem;
+    }
+    
+    th {
+        font-size: 0.65rem;
+    }
+    
+    td strong {
+        font-size: 0.6rem;
     }
 }
 
